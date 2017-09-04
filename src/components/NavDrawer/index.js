@@ -4,11 +4,10 @@ import {Link} from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import Menu from 'material-ui/svg-icons/navigation/menu';
+import {NavToggleButton} from '../styled/NavDrawer';
 
 class NavDraw extends Component {
-	state = {open:false};
+	state = {open:false,width:250};
 
 	toggle = () => {
 		this.setState((prevState, props) => {
@@ -19,10 +18,12 @@ class NavDraw extends Component {
 	render(){
 		return(
 			<div>
-				<FloatingActionButton onTouchTap={this.toggle}>
-					<Menu />
-				</FloatingActionButton>
-				<Drawer open={this.state.open}>
+				<NavToggleButton 
+					toggle={this.toggle}
+					width={this.state.width}
+					open={this.state.open}
+				/>
+				<Drawer open={this.state.open} width={this.state.width}>
 					<div style={{height:200,width:'100%',backgroundColor:'salmon'}}>
 						Login Container
 					</div>

@@ -3,14 +3,16 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 import Home from './Home';
 import Profile from './Profile';
-import NavDraw from './NavDraw';
+import NavDrawer from './NavDrawer';
+import {Header} from './styled/Template';
 
 class App extends Component {
 	render(){
 		return(
 			<BrowserRouter>
 				<div>
-					<NavDraw />
+					<NavDrawer />
+					<Header>TicTacTuring</Header>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/profile' component={Profile} />
 				</div>
