@@ -13,7 +13,7 @@ class App extends Component {
         <div>
           <NavDrawer />
           <Header>TicTacTuring</Header>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/play" component={Home} />
           <Route exact path="/profile" component={Profile} />
         </div>
       </BrowserRouter>

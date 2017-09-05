@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^8.9.3",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
@@ -48,14 +49,17 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start":
-      "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj75m6qi40dan015609jvpjp8 node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "node scripts/start.js",
+    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj75m6qi40dan015609jvpjp8 node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
-    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
-    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/polyfills.js"
+    ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -67,15 +71,28 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
   },
   "babel": {
-    "plugins": ["react-relay"],
-    "presets": ["react-app"]
+    "plugins": [
+      "react-relay"
+    ],
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

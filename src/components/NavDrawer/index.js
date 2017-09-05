@@ -6,6 +6,9 @@ import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
 import { NavToggleButton } from '../styled/NavDrawer';
 
+import Auth from '../../config/auth';
+const auth = new Auth();
+
 class NavDraw extends Component {
   state = { open: false, width: 250 };
 
@@ -38,6 +41,7 @@ class NavDraw extends Component {
           <Link to="/profile">
             <MenuItem primaryText="Profile" onTouchTap={this.toggle} />
           </Link>
+          <MenuItem primaryText="Log in" onTouchTap={auth.login} />
         </Drawer>
       </div>
     );

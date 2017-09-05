@@ -37,9 +37,36 @@ export const Squares = ({
   ownMark,
   move
 }) => {
+  const squares = coordinates.map((coordinate,index) => {
+    let makeMove = move;
+    let mark = gameState[index];
+    let fill = 'black';
+    if(win && win.includes(index)) {
+      fill = 'lightgreen';
+    }
+    if(gameOver || !yourTurn || mark) {
+      makeMove = () => console.log('Nope!');
+    }
+    return <Text
+      key={index}
+      index={index}
+      x={coordinate[0]}
+      y={coordinate[1]}
+      fontSize={units}
+      width={units}
+      text={mark}
+      fill={fill}
+      fontFamily="Helvetica"
+      align="center"
+      onClick={event => {
+        const index=event.target.index;
+        makeMove(ownMark,index);
+      }}
+    />
+  });
   return (
     <Layer>
-      <Text />
+      {squares}
     </Layer>
   );
 };
